@@ -46,11 +46,7 @@ public class ListOfOccurence {
 	 	 listofA.stream().collect(Collectors.groupingBy(Function.identity(), Collectors.toList())).forEach((k,v)->{
 		    System.out.println(" K "+k+" v "+v);		     
 		   });
-	     		}			
-
-	
-
-	
+	     		}
 		
    
 }
