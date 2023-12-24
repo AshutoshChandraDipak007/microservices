@@ -22,20 +22,23 @@ public class Client {
 	    		Function.identity(),Collectors.counting()
 	    		));
 	    
-	    mapOfString.values().stream().distinct().collect(null);
+	 //   mapOfString.values().stream().distinct().collect(null);
 		
 		Map<Integer,Employee> mapOfEmployee=new HashMap<Integer,Employee>();
 		
 		mapOfEmployee.put(1, new Employee("1","emp1",23));
 		mapOfEmployee.put(2, new Employee("2","emp2",24));
 		mapOfEmployee.put(3, new Employee("3","emp3",25));
+		
 		mapOfEmployee.forEach((k,v)->{
 			System.out.println(" K "+k+" V "+v);
 		});
 		
 		
-		mapOfEmployee.values().stream().filter(emp->!emp.getEid().endsWith("2")).forEach(emp->{
-			System.out.println(" Employee "+emp.getEid()+"  "+emp);
+		mapOfEmployee.values().stream()
+		.filter(emp->!emp.getEid().endsWith("2"))
+		.forEach(emp->{
+			System.out.println(" Employee endsWith(\"2\") "+emp.getEid()+"  "+emp);
 		});
 	    
 		
