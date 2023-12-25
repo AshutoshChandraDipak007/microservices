@@ -3,6 +3,8 @@ package com.org.spring.scheduler;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.scheduling.annotation.EnableScheduling;
@@ -14,7 +16,8 @@ import lombok.extern.log4j.Log4j2;
 @EnableScheduling
 @Log4j2
 public class SpringSchedulerDemo {
-
+	 private static final Logger logger = LoggerFactory.getLogger(SpringSchedulerDemo.class);
+	   
 	public static void main(String[] args) {
 		SpringApplication.run(SpringSchedulerDemo.class, args);		
 	}
@@ -46,12 +49,13 @@ public class SpringSchedulerDemo {
 		Date now = new Date();
 		String strDate = sdf.format(now);
 		//System.out.println("Fixed Rate scheduler:: " + strDate);
-		log.debug("Fixed Rate scheduler:: " + strDate);
-		log.trace("Fixed Rate scheduler:: " + strDate);
-        log.debug("Fixed Rate scheduler:: " + strDate);
-        log.info("Fixed Rate scheduler:: " + strDate);
-        log.warn("Fixed Rate scheduler:: " + strDate);
-        log.error("Fixed Rate scheduler:: " + strDate);
+		logger.debug("Fixed Rate scheduler:: " + strDate);
+		logger.trace("Fixed Rate scheduler:: " + strDate);
+		logger.debug("Fixed Rate scheduler:: " + strDate);
+        logger.info("Fixed Rate scheduler:: " + strDate);
+        logger.warn("Fixed Rate scheduler:: " + strDate);
+        logger.error("Fixed Rate scheduler:: " + strDate);
+        logger.debug(strDate);
 	}
 
 //	Fixed Delay
@@ -68,12 +72,12 @@ public class SpringSchedulerDemo {
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS");
 		Date now = new Date();
 		String strDate = sdf.format(now);
-		log.debug("Fixed Delay scheduler:: " + strDate);
-		log.trace("Fixed Delay scheduler:: " + strDate);
-        log.debug("Fixed Delay scheduler:: " + strDate);
-        log.info("Fixed Delay scheduler:: " + strDate);
-        log.warn("Fixed Delay scheduler:: " + strDate);
-        log.error("Fixed Delay scheduler:: " + strDate);
+		logger.debug("Fixed Delay scheduler:: " + strDate);
+		logger.trace("Fixed Delay scheduler:: " + strDate);
+		logger.debug("Fixed Delay scheduler:: " + strDate);
+		logger.info("Fixed Delay scheduler:: " + strDate);
+		logger.warn("Fixed Delay scheduler:: " + strDate);
+		logger.error("Fixed Delay scheduler:: " + strDate);
 		System.out.println("");
 		System.out.println("");		
 	}
